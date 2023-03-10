@@ -33,7 +33,7 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: |
-          cd put_function/tests
+          cd tests
           npm install
       - name: Run tests with pytest
         env:
