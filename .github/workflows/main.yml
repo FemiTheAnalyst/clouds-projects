@@ -1,24 +1,3 @@
-# name: main
-# on: push
-# jobs:
-#   test-infra:
-#     runs-on: ubuntu-latest
-#     timeout-minutes: 2
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-python@v1
-#         with:
-#           python-version: 3.9
-#       - name: Install dependencies
-#         run: |
-#           cd CloudResumeChallenge/put_function/tests/unit
-#           python -m pip install --upgrade pip
-#           pip install -r requirements.txt
-#       - name: Run tests with pytest
-#         env:
-#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#         run: pytest
 name: main
 on: push
 jobs:
@@ -27,16 +6,41 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v2
+      - uses: actions/setup-python@v1
+      - uses: actions/setup-node@v2
         with:
+          python-version: 3.9
           node-version: '16'
+          
+            
       - name: Install dependencies
         run: |
-          cd tests
-          npm install
+          tests
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: Run tests with pytest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: pytest
+# name: main
+# on: push
+# jobs:
+#   test-infra:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 2
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Setup Node.js 16
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '16'
+#       - name: Install dependencies
+#         run: |
+#           cd tests
+#           npm install
+#       - name: Run tests with pytest
+#         env:
+#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         run: pytest
