@@ -36,7 +36,7 @@ Resources:
     Type: AWS::Route53::RecordSetGroup
     Properties:
       Comment: Configure cloudfront Route53
-      HostedZoneId: Z0614294IWASTRW3T3NU
+      HostedZoneId: "your ZoneId address"
       RecordSets:
         - Name: www.simplyclass.link
           Type: A

@@ -15,7 +15,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("https://hw3w8zp4xc.execute-api.us-east-1.amazonaws.com/Prod/visit", {
+    fetch(" my api address", {
     method: "POST"
     })
     .then(response => response.text())
