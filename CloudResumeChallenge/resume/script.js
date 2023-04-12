@@ -1,7 +1,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch(" my api address", {
+    fetch(" my Api Address", {
     method: "POST"
     })
     .then(response => response.text())
