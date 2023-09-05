@@ -2,7 +2,7 @@
 # cloud-resume-challenge
 This project is my online resume, a static web page, serving simple html & css I wrote from scratch to keep it clean.
 Using "aws-vault", which helps me manage AWS profiles and store credentials securely, and GitHub actions is using secrets for this during CI/CD.
-Please see my [Dev.to blog post](https://dev.to/marcbacchi/cloud-resume-built-for-a-challenge-4m8p) for a good read about this project.
+Please see my [medium.com blog post]((https://medium.com/@femundo007/my-cloud-resume-challenge-7b787c5e4d12)) for a good read about this project.
 You can visit [my domain here]( www.simplyclass.link) which is the result of this project.
 #### How this project works at the moment:
 Any push to Main branch will trigger the GitHub actions I created which will:
